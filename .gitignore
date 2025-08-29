@@ -1,0 +1,81 @@
+# ========================
+# Python / Virtual Envs
+# ========================
+.venv/
+.env/
+.envrc
+.python-version
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ========================
+# Jupyter
+# ========================
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+*.html
+
+# ========================
+# IDEs / Editors
+# ========================
+.vscode/
+.idea/
+
+# ========================
+# Tool caches
+# ========================
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+
+# ========================
+# Models and artifacts
+# ========================
+models/
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+
+# Data folders (ignored, except structure & docs)
+# ======================
+data/raw/*
+data/interim/*
+data/processed/*
+data/external/*
+
+# Keep placeholder files
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
+
+# Keep documentation files
+!data/raw/README.md
+!data/interim/README.md
+!data/processed/README.md
+!data/external/README.md
+
+# Keep sample datasets (optional, small examples only)
+!data/sample/*
+
+# Prevent datasets outside the data folder
+*.csv
+*.parquet
+
+# ========================
+# Logs & reports
+# ========================
+logs/
+*.log
+htmlcov/
+.coverage
+
+# ========================
+# OS files
+# ========================
+.DS_Store
+Thumbs.db

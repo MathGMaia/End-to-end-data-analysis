@@ -1,0 +1,61 @@
+[project]
+name = "olist-data-analysis"
+version = "1.0.0"
+description = "Projeto de Data Science"
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+# Dependências principais (produção/uso geral)
+dependencies = [
+    "numpy>=1.26,<2.0",
+    "pandas>=2.2,<3.0",
+    "scikit-learn>=1.5,<2.0",
+    "scipy>=1.13,<2.0",
+    "matplotlib>=3.9,<4.0",
+    "seaborn>=0.13,<1.0",
+    "pyarrow>=17.0,<18.0"
+]
+
+[project.optional-dependencies]
+# Dependências para desenvolvimento e qualidade de código
+dev = [
+    "pytest>=8.0,<9.0",
+    "ruff>=0.6,<1.0",
+    "black>=24.0,<25.0",
+    "isort>=5.13,<6.0",
+    "pre-commit>=3.5,<4.0",
+    "nbstripout>=0.7,<1.0",
+    "mypy>=1.10,<2.0",
+    "pandas-stubs",
+    "types-requests"
+]
+
+# Dependências opcionais para notebooks (exploração)
+notebooks = [
+    "jupyter>=1.0,<2.0",
+    "ipykernel>=6.29,<7.0"
+]
+
+# ========================
+# Tools configuration
+# ========================
+
+[tool.black]
+line-length = 88
+target-version = ["py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+select = ["E", "F", "I"] # erros, formatação e imports
+ignore = ["E501"]        # ignorar limite de linha se quiser
+
+[tool.pytest.ini_options]
+addopts = "-ra -q --disable-warnings"
+testpaths = ["tests"]
+pythonpath = ["src"]
